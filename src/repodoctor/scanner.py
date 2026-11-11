@@ -13,7 +13,7 @@ class Finding:
     recommendation: str = ""
     def to_dict(self): return asdict(self)
 
-PATTERNS = [("RD001", re.compile(r"-----BEGIN (?:RSA |EC |OPENSSH )?PRIVATE KEY-----")), ("RD002", re.compile(r"(?i)(?:api[_-]?key|secret|access[_-]?token)\\s*[:=]\\s*['\"][A-Za-z0-9_\\-]{16,}")), ("RD003", re.compile(r"\\bgh[pousr]_[A-Za-z0-9]{30,}\\b"))]
+PATTERNS = [("RD001", re.compile(r"-----BEGIN (?:RSA |EC |OPENSSH )?PRIVATE KEY-----")), ("RD002", re.compile(r"(?i)(?:api[_-]?key|secret|access[_-]?token)\s*[:=]\s*['\"][A-Za-z0-9_\-]{16,}")), ("RD003", re.compile(r"\bgh[pousr]_[A-Za-z0-9]{30,}\b"))]
 SKIP = {".git", ".venv", "venv", "node_modules", "__pycache__", "dist", "build"}
 SUFFIXES = {".py", ".js", ".ts", ".tsx", ".jsx", ".json", ".yml", ".yaml", ".toml", ".ini", ".cfg", ".env", ".md", ".txt", ".sh", ".html", ".go", ".rs", ".java", ".rb"}
 
